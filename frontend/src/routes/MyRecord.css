@@ -1,0 +1,38 @@
+/* 전역변수 */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* id로 지정 */
+/* 뒷배경 - 추후에 three로 변경 */
+#my-record-body {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+/* 상단 메뉴 바 */
+#my-record-menu-bar {
+  height: 50px;
+}
+
+/* 텍스트 로고 */
+#girinee-img {
+  height: 35px;
+}
+#graph-text {
+  color: #e0ffff; 
+}
+/* week-report-body */
+#game-report-body {
+  height: 100%;
+}
+
+#daily-report-body {
+  height: 60%;
+}

@@ -1,0 +1,49 @@
+#chord-table-left-box {
+    width: 30%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3%;
+}
+#chord-table-right-box {
+    width: 30%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3%;
+}
+
+#chord-table-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: space-between;
+}
+
+#chord-select-label {
+    color: white;
+    background-color: transparent;
+}
+
+#chord-select {
+    border-width: 1px;
+    border-radius: 5px;
+    border-style:solid;
+    border-color: white;
+}
+
+/* #chord-select-box {
+    border-width: 2px;
+    border-color: white;
+    border-style:solid;
+} */
+#low-level-controller {
+    margin-top: 50px;
+}

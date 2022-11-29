@@ -1,0 +1,509 @@
+/* 전역변수 */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.swal-wide{
+   width:800px !important;
+}
+
+/* id로 지정 */
+/* 뒷배경 - 추후에 three로 변경 */
+#game-body {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+}
+
+/* 상단 메뉴 바 */
+#menu-bar {
+  height: 50px;
+  width: 100vw;
+  position: absolute;
+  z-index: 3;
+}
+
+/* 텍스트 로고 */
+#girinee-img {
+  height: 25px;
+  
+}
+
+#controller-box{
+   min-height: 100vh;
+   border-radius: 15px;
+   background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 난이도 컨트롤러 */
+#level-controller-outline{
+   margin-top: 8px;
+   width: 110px;
+   height: 110px;
+   background-color: transparent;
+   border: 3.5px solid white;
+   border-radius: 50%;
+   transition: 0.5s;
+}
+
+#level-controller{
+   position: relative;
+   width: 90px;
+   height: 90px;
+   background-color: transparent;
+   border: 2.3px solid white;
+   border-radius: 50%;
+   margin-top: 6px;
+}
+
+/* 컨트롤러 내부의 인덱스 */
+#level-index{
+   position: relative;
+   width: 8px;
+   height: 8px;
+   margin-top: 20px;
+   margin-left: 60px;
+   background-color: white;
+   border-radius: 50%;
+}
+
+#color-controller-outline{
+   margin-top: 8px;
+   width: 110px;
+   height: 110px;
+   background-color: transparent;
+   border: 3.5px solid white;
+   border-radius: 50%;
+   transition: 0.5s;
+}
+
+#color-controller{
+   position: relative;
+   width: 90px;
+   height: 90px;
+   background-color: transparent;
+   border: 2.3px solid white;
+   border-radius: 50%;
+   margin-top: 6px;
+}
+
+#color-index{
+   position: relative;
+   width: 8px;
+   height: 8px;
+   margin-top: 20px;
+   margin-left: 60px;
+   background-color: white;
+   border-radius: 50%;
+}
+
+/* 레벨 값 */
+#level-value{
+   font-family: 'YUniverse-L';
+   font-weight: 300;
+   font-size: 2.3rem;
+   margin: 0;
+   color: white;
+}
+
+/* 레벨 설명 */
+#level-discription{
+   font-family: 'MICEGothic-Regular';
+   font-weight: 400;
+   color: white;
+}
+
+/* 운지법 이미지 */
+#chord-img{
+   height: 200px;
+   max-width: 250px;
+}
+
+/* class로 지정 */
+/* 하얀 텍스트 */
+.white-text {   
+  color: rgb(221, 237, 246);
+}
+
+/* 메뉴 텍스트 */
+.menu-text {
+  color: lightgrey;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.menu-btn {
+   padding: 0px;
+}
+/* 난이도 텍스트 */
+.level-text {
+   font-family:'Pretendard-regular';
+   font-weight: 200;
+   font-size: 2rem;
+  color: rgb(242, 241, 241);
+}
+
+.new-font {
+   font-family: 'YUniverse-L';
+   font-weight: 300;
+   font-size: 1.1rem;
+   color: white;
+   margin: 0;
+}
+/* 난이도 */
+
+/* 컨트롤 상태 따라서 회전 */
+.degree0 {
+  transform: rotate(0deg);
+}
+.degree1 {
+  transform: rotate(40deg);
+}
+.degree2 {
+  transform: rotate(80deg);
+}
+.selectlightblue{
+  transform: rotate(0deg);
+}
+.selectlightyellow{
+  transform: rotate(40deg);
+}
+.selectlightpink{
+  transform: rotate(80deg);
+}
+
+/* 폰트 애니메이션 */
+.line-up {
+  animation: 1s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+#quitLever {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 10em;
+}
+#quitLever label span{
+  color: white
+}
+
+/* Lever */
+#lever {
+   max-width: 88px;
+   max-height: 30px;
+   background-color: transparent;
+   border-radius: 17.5px;
+   border: 1px solid white;
+   box-shadow:inset 0 0.5em 0.5em rgba(0,0,0,0.7);
+   cursor: pointer;
+   font-size: 1em;
+   display: block;
+   /* outline: 0; */
+   position: relative;
+   width: 6em;
+   height: 6em;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   transition: background-position 0.3s linear;
+}
+#lever:before, #lever:after {
+   content: "";
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+}
+#lever:before {
+   animation: leverAOff 0.3s linear forwards;
+   border-radius: 50%;
+   width: 1.8em;
+   height: 1.8em;
+   transform: translate(100%,-50%);
+   z-index: 1;
+}
+#lever:checked:before {
+   animation: leverAOn 0.3s linear forwards;
+}
+#lever:after {
+   animation: leverBOff 0.3s linear forwards;
+   background-color: white;
+   border-radius: 50%;
+   width: 1.5em;
+   height: 1.5em;
+   transform: translate(100%,-50%);
+}
+#lever:checked:after {
+   animation: leverBOn 0.3s linear forwards;
+}
+/* To stop animations from running on load */
+.pristine:before, .pristine:after {
+   animation: none;
+}
+
+@keyframes leverAOn {
+   from {
+      transform: translate(100%,-50%);
+   }
+   50% {
+   }
+   to {
+      transform: translate(-100%,-50%);
+   }
+}
+@keyframes leverAOff {
+   from {
+      transform: translate(-100%,-50%);
+   }
+   50% {
+   }
+   to {
+      transform: translate(100%,-50%);
+   }
+}
+@keyframes leverBOn {
+   from { width: 1.5em; transform: translate(1em,-50%); }
+   50% { width: 1.5em; transform: translate(-50%,-50%); }
+   to { width: 1.5em; transform: translate(-2.7em,-50%); }
+}
+@keyframes leverBOff {
+   from { width: 1.5em; transform: translate(-1em,-50%); }
+   50% { width: 1.5em; transform: translate(-50%,-50%); }
+   to { width: 1.5em; transform: translate(1em,-50%); }
+}
+
+
+/* 오디오 태그 */
+audio::-webkit-media-controls-panel {
+   background-color: transparent;
+}
+audio::-webkit-media-controls-enclosure {
+   background-color: white;
+   border-radius: 5px;
+}
+
+/* 녹음버튼 */
+#record-btn {
+   width: 60px;
+   height: 60px;
+   color: #e74c3c;
+   background: none;
+   border: 1px solid #e74c3c;
+   border-radius: 50%;
+   transition: 0.15s linear;
+}
+#record-icon {
+   margin-top: 5px;
+}
+#record-btn:hover {
+   transition: 0.15s linear;
+   transform: scale( 1.05 );
+    cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.15);   
+}
+#record-btn:active {
+   background: #fff;
+}
+#record-btn[disabled] {
+   border: 1px solid #ccc;
+   background-color: white;
+   opacity: 0.5;
+}
+#record-btn[disabled]:after {
+   color: #ccc;
+}
+#record-btn[disabled]:hover {
+   transition: 0.15s linear;
+   transform: none;
+}
+#record-btn[disabled]:active {
+   background: none;
+}
+
+/* 정지버튼 */
+#stop-btn {
+   width: 60px;
+   height: 60px;
+   color: white;
+   background: none;
+   border: 1px solid white;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: 0.15s linear;
+   opacity: 1;
+}
+#stop-icon {
+   margin-top: 5px;
+}
+#stop-btn:hover {
+   transition: 0.15s linear;
+   transform: scale( 1.05 );
+}
+#stop-btn:active {
+   background: #fff;
+   opacity: 1;
+}
+#stop-btn[disabled] {
+   width: 60px;
+   height: 60px;
+   color: white;
+   background: none;
+   border: 1px solid white;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: 0.15s linear;
+   opacity: 0.5;
+}
+#stop-btn[disabled]:after {
+   color: #ccc;
+}
+#stop-btn[disabled]:active {
+   background: none;
+}
+
+.selectBox {
+   background-color: transparent;
+   border-radius: 5px;
+   width: 200px;
+}
+#chord-select{
+   color: white;
+}
+#normal-start-btn{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+   width: 200px;
+   height: 60px;
+}
+#hard-start-btn{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+   width: 200px;
+   height: 60px;
+}
+#easy-check-btn{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+   width: 200px;
+   height: 60px;
+}
+#normal-check-btn{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+   width: 200px;
+   height: 60px;
+}
+#hard-check-btn{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+   width: 200px;
+   height: 60px;
+}
+
+#audio-play-btn-name{
+   font-family: 'MICEGothic-Regular';
+   font-size: 1.3rem;
+}
+
+/* left audio */
+
+#my-controller-bgm-box {
+   margin-right: 3%;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   width: 20%;
+   height: 55%;
+   background-color: rgba(0,0,0,0.55);
+   border-radius: 20px;
+
+}
+.off#my-controller-bgm-box {
+   display:none;
+}
+#my-controller-audio-control {
+   background-color: rgba(0,0,0,0);
+   border-color: #a6a6a6;
+}
+
+#my-controller-audio-play {
+   width: 55%;
+}
+
+#my-controller-audio-control-box {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+/* 음원 재생 버튼 */
+#audio-play-btn {
+   width: 60px;
+   height: 60px;
+   color: white;
+   background: none;
+   border: 1px solid white;
+   border-radius: 50%;
+   transition: 0.15s linear;
+}
+#audio-play-icon {
+   margin-top: 4px;
+}
+#audio-play-btn:hover {
+   transition: 0.15s linear;
+   transform: scale( 1.05 );
+   cursor: pointer;
+   background-color: rgba(255, 255, 255, 0.15);   
+}
+
+#chord-game-container {
+    width: 100%;
+    height: 100%;
+}
+.countDownDiv{
+   width: 250px;
+   height: 250px;
+   border-radius: 10%;
+   margin-top: 20px;
+   background-color: rgba(255,255,255,0.3);
+   position:absolute;   
+   left: calc(50% - 125px);
+   top: calc(50% - 125px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding:0;
+   /* margin-left: 50%; */ 
+}
+.countDownNumber{
+   padding: 0;
+   margin: 0;
+   font-family: 'MonoplexKR-Regular';
+   font-weight: 400;
+   font-size: 200px;
+   color: white;
+}

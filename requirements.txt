@@ -1,0 +1,14 @@
+tqdm==4.64.1
+uvicorn==0.18.3
+tensorflow==2.5.0
+tensorflow-estimator==2.5.0
+requests==2.28.1
+python-multipart==0.0.5
+Pillow @ file:///D:/bld/pillow_1660386017005/work
+numpy==1.19.5
+matplotlib @ file:///D:/bld/matplotlib-suite_1661439961257/work
+matplotlib-inline @ file:///C:/ci/matplotlib-inline_1661915841596/work
+keras-nightly==2.5.0.dev2021032900
+Keras-Preprocessing==1.1.2
+ffmpeg-python==0.2.0
+fastapi==0.85.0

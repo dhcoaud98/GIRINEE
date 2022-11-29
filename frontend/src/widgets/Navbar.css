@@ -1,0 +1,21 @@
+.logout-btn {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  /* position: absolute; */
+  /* justify-content: center; */
+  left: 1;
+  right: 0;
+  bottom: 0;
+  top: 1;
+  margin-right: 30px;
+  width: 100px;
+  height: 50px;
+  z-index: 2;
+}
+
+.logout-btn:hover {
+  cursor:pointer;
+  opacity: 70%;
+}
